@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "6e25934c-3b57-4764-9957-debd8ca6cbf8",
+		"name": "todoTDD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Adição",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"num1 = parseInt(pm.request.url.query.toObject().numA)\r",
+							"num2 = parseInt(pm.request.url.query.toObject().numB)\r",
+							"// qdo for fazer a API, lembrar de colocar a resposta numa variável \"resultado\"\r",
+							"resultado = pm.response.json()[\"resultado\"]\r",
+							"\r",
+							"if (isNaN(num1) || isNaN(num2)){\r",
+							"    pm.test(\"Testa adição com operadores inválidos\", ()=>{\r",
+							"        pm.expect(resultado).to.be.equal(null)\r",
+							"    })\r",
+							"}\r",
+							"else {   \r",
+							"    pm.test(\"Testa a adição\", ()=>{           \r",
+							"        pm.expect(resultado).to.be.equal(num1 + num2)\r",
+							"    })\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/calculadora/adicao?numA=3&numB=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"calculadora",
+						"adicao"
+					],
+					"query": [
+						{
+							"key": "numA",
+							"value": "3"
+						},
+						{
+							"key": "numB",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subtração",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"num1 = parseInt(pm.request.url.query.toObject().numA)\r",
+							"num2 = parseInt(pm.request.url.query.toObject().numB)\r",
+							"// qdo for fazer a API, lembrar de colocar a resposta numa variável \"resultado\"\r",
+							"resultado = pm.response.json()[\"resultado\"]\r",
+							"\r",
+							"if (isNaN(num1) || isNaN(num2)){\r",
+							"    pm.test(\"Testa subtração com operadores inválidos\", ()=>{\r",
+							"        pm.expect(resultado).to.be.equal(null)\r",
+							"    })\r",
+							"}\r",
+							"else {   \r",
+							"    pm.test(\"Testa a subtração\", ()=>{           \r",
+							"        pm.expect(resultado).to.be.equal(num1 - num2)\r",
+							"    })\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/calculadora/subtracao?numA=3&numB=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"calculadora",
+						"subtracao"
+					],
+					"query": [
+						{
+							"key": "numA",
+							"value": "3"
+						},
+						{
+							"key": "numB",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multiplicação",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"num1 = parseInt(pm.request.url.query.toObject().numA)\r",
+							"num2 = parseInt(pm.request.url.query.toObject().numB)\r",
+							"// qdo for fazer a API, lembrar de colocar a resposta numa variável \"resultado\"\r",
+							"resultado = pm.response.json()[\"resultado\"]\r",
+							"\r",
+							"if (isNaN(num1) || isNaN(num2)){\r",
+							"    pm.test(\"Testa multiplicação com operadores inválidos\", ()=>{\r",
+							"        pm.expect(resultado).to.be.equal(null)\r",
+							"    })\r",
+							"}\r",
+							"else {   \r",
+							"    pm.test(\"Testa a multiplicação\", ()=>{           \r",
+							"        pm.expect(resultado).to.be.equal(num1 * num2)\r",
+							"    })\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/calculadora/multiplicacao?numA=3&numB=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"calculadora",
+						"multiplicacao"
+					],
+					"query": [
+						{
+							"key": "numA",
+							"value": "3"
+						},
+						{
+							"key": "numB",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Divisão",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"num1 = parseInt(pm.request.url.query.toObject().numA)\r",
+							"num2 = parseInt(pm.request.url.query.toObject().numB)\r",
+							"// qdo for fazer a API, lembrar de colocar a resposta numa variável \"resultado\"\r",
+							"resultado = pm.response.json()[\"resultado\"]\r",
+							"\r",
+							"if (isNaN(num1) || isNaN(num2)){\r",
+							"    pm.test(\"Testa divisão com operadores inválidos\", ()=>{\r",
+							"        pm.expect(resultado).to.be.equal(null)\r",
+							"    })\r",
+							"}\r",
+							"\r",
+							"else if (num2 == 0){\r",
+							"pm.test(\"Testa a divisão por zero\", ()=>{\r",
+							"    num1 = parseInt(pm.request.url.query.toObject().numA)\r",
+							"    //num2 = parseInt(pm.request.url.query.toObject().numB)\r",
+							"    \r",
+							"    pm.expect(resultado).to.be.equal(null)\r",
+							"})\r",
+							"\r",
+							"} else {   \r",
+							"    pm.test(\"Testa a divisão\", ()=>{           \r",
+							"        pm.expect(resultado).to.be.equal(num1 / num2)\r",
+							"    })\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/calculadora/divisao?numA=3&numB=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"calculadora",
+						"divisao"
+					],
+					"query": [
+						{
+							"key": "numA",
+							"value": "3"
+						},
+						{
+							"key": "numB",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
